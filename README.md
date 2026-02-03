@@ -1,6 +1,8 @@
 
-# jf-splitter (sync changes to users)
-Dual Jellyfin Account Mirroring Proxy - designed to work with jfa-go
+# jf-splitter (split api to "sync" multiple user tables)
+
+Multiple Jellyfin API Mirroring Proxy - designed to work with jfa-go
+
 
 <img width="1228" height="232" alt="Untitled" src="https://github.com/user-attachments/assets/2ad4fafd-5506-45bd-a316-7dab8dea7d44" />
 
