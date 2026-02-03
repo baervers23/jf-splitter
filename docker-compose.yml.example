@@ -1,0 +1,38 @@
+services:
+  jfa-go:
+    image: hrfee/jfa-go:latest
+    container_name: jfa-go
+    restart: unless-stopped
+#    ports:                                            #dont expose if not needed
+#      - '8056:8056'
+    volumes:
+      - /path/to/config/jfa-go:/data
+      - /path/to/jellyfin:/jf
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - anysharednetwork
+
+  jf-splitter:
+    build:
+      context: ./jf-splitter
+      dockerfile: Dockerfile
+    container_name: jf-splitter
+    image: jf-splitter
+    restart: unless-stopped
+#    ports:                                            #dont expose if not needed
+#      - '8095:8095'
+    environment:
+      - JF_UPSTREAM_A=http://jellyfin:8096             # Jellyfin on same host like jf-splitter including same docker network
+      - JF_UPSTREAM_B=http://10.8.0.1:8096             # Jellyfin from another host, if not in the same network use wireguard
+      - JF_TOKEN_A=${JF_TOKEN_A}
+      - JF_TOKEN_B=${JF_TOKEN_B}
+      - SPLIT_MODE=mirror_writes                       # mirror_writes (default) | mirror_all | failover
+      - AUTH_MODE=upstream_tokens                      # upstream_tokens (default) | passthrough
+      - LOG_LEVEL=info                                 # info (default) | debug
+    networks:
+      - anysharednetwork
+
+networks:
+  anysharednetwork:
+    name: anysharednetwork
+    driver: bridge
