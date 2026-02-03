@@ -1,9 +1,11 @@
 
-# jf-splitter - Multiple Jellyfin API Mirroring Proxy, designed to work with jfa-go
+#                     JF-Splitter
+> Jellyfin API Mirroring Proxy, designed to work with jfa-go <br>
+<br>
 Mirror's API requests to multiple jellyfin instances & "sync" jellyfin user tables
 
-
-
+<br>
+<br>
 
 <img width="1228" height="232" alt="Untitled" src="https://github.com/user-attachments/assets/2ad4fafd-5506-45bd-a316-7dab8dea7d44" />
 
@@ -17,6 +19,9 @@ JF-SPLITTER
   └── Jellyfin B (Admin only, mirrored)
 ```
 
+<br>
+<br>
+
 # ⚙️ Key features:
 - 🔁 Mirrored account writes - create users, enable / disable users, password changes, policy updates
 - 🔐 Authentication-safe - Auth endpoints are never mirrored, No token/session corruption
@@ -24,7 +29,9 @@ JF-SPLITTER
 - 🔄 Self-healing mappings - automatically rebuilt if missing
 - 🐳 Docker-native
 - 🧪Readable debug logs
-
+  
+<br>
+<br>
 # 🔁 What Gets Mirrored?
 ✅ Mirrored
 - POST /Users/New
@@ -37,9 +44,9 @@ JF-SPLITTER
 - /Sessions
 - /QuickConnect
 - Any auth/session endpoint
-
-
-
+<br>
+<br>
+<br>
 
 
 # 🛠️ Installation Steps:
@@ -84,9 +91,15 @@ Server address: http://jf-splitter:8095
 > If you don't want to edit the sqlite.db files, you can manually create each user in the Jellyfin GUI and then simply send all users a PWR: Users → Create → Send Invite.
 >  Once the user has updated their password, the login is synchronized between the Jellyfin instances.
 
+<br>
+<br>
+
 
 # 🔍 Test JF-Splitter: 
 Login to JFA-GO and create a new User, the User should have been created in both jellyfin instances.
+
+<br>
+<br>
 
 # 🧪 Health & Debugging
 Health Endpoint:
