@@ -1,7 +1,8 @@
 
-# jf-splitter (split api to "sync" user tables for multiple jellyfin instances)
+# jf-splitter - Multiple Jellyfin API Mirroring Proxy, designed to work with jfa-go
+Mirror's API requests to multiple jellyfin instances & "sync" jellyfin user tables
 
-Multiple Jellyfin API Mirroring Proxy - designed to work with jfa-go
+
 
 
 <img width="1228" height="232" alt="Untitled" src="https://github.com/user-attachments/assets/2ad4fafd-5506-45bd-a316-7dab8dea7d44" />
